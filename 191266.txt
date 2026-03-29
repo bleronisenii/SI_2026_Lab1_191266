@@ -1,0 +1,39 @@
+Употребени команди:
+git checkout -b feature-search-books
+git add SI2026Lab1Main.java
+git commit -m "Implement book search"
+git push -u origin feature-search-books
+git checkout master
+git merge feature-search-books
+git log --oneline --graph --all
+
+
+
+Merge-от беше fast-forward затоа што master не содржеше дополнителни commits, 
+а feature-search-books беше чекор напред во истата линија на развој.
+
+
+
+
+
+На гранката feature-borrow-book при merge со master настана конфликт во датотеката SI2026Lab1Main.java, 
+идејќи и двете гранки ја менуваа истата порака за успешно позајмување.
+Употребени команди:
+git checkout feature-borrow-book
+git merge master
+git add SI2026Lab1Main.java
+git commit
+git status
+Merge-от  беше fast-forward.
+
+
+
+
+
+23. Merge-от не беше fast-forward, бидејќи постоеја различни commits во двете гранки, 
+па Git мораше да направи merge commit.
+
+
+
+24. Merge-от не беше fast-forward бидејќи двете гранки имаа различна историја со 
+повеќе commits, па Git направи merge commit.
