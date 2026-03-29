@@ -65,18 +65,20 @@ class Library {
 
     // TODO: Implement in branch feature-borrow-book
     public void borrowBook(String title) {
-        for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
-                if (!book.isBorrowed()) {
-                    book.setBorrowed(true);
-                    System.out.println("Book borrowed.");
-                } else {
-                    System.out.println("Book is already borrowed.");
-                }
-                return;
+       public void borrowBook(String title) {
+    for (Book book : books) {
+        if (book.getTitle().equalsIgnoreCase(title)) {
+            if (!book.isBorrowed()) {
+                book.setBorrowed(true);
+                System.out.println("Borrowed successfully");
+            } else {
+                System.out.println("Book is already borrowed.");
             }
+            return;
         }
-        System.out.println("Book not found.");
+    }
+    System.out.println("Book not found.");
+}
     }
 
     public void returnBook(String title) {
