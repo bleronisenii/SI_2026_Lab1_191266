@@ -96,16 +96,19 @@ class Library {
 
     // TODO: Implement in branch feature-genre-report
     public void printBooksByGenre(String genre) {
+    boolean found = false;
+
+    for (Book book : books) {
+        if (book.getGenre().equalsIgnoreCase(genre)) {
+            System.out.println(book.getTitle() + " by " + book.getAuthor());
+            found = true;
+        }
     }
 
-    public int countAvailableBooks() {
-        int count = 0;
-        for (Book book : books) {
-            if (!book.isBorrowed()) {
-                count++;
-            }
-        }
-        return count;
+    if (!found) {
+        System.out.println("No books found in this genre.");
+    }
+}n count;
     }
 
     public void printBorrowedBooks() {
